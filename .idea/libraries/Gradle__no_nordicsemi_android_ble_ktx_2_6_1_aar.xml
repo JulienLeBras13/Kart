@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: no.nordicsemi.android:ble-ktx:2.6.1@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/12fdd2b756fff7312ae3f0d5d1374134/transformed/ble-ktx-2.6.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/12fdd2b756fff7312ae3f0d5d1374134/transformed/ble-ktx-2.6.1/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/no.nordicsemi.android/ble-ktx/2.6.1/b727e74780e692e8f0cf830fb6bbd8f595ce8e71/ble-ktx-2.6.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

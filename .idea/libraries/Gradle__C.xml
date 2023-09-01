@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: C">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/8a6b6e62c49f2a0fcfbc6fc1308d68aa/transformed/kart-release/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/8a6b6e62c49f2a0fcfbc6fc1308d68aa/transformed/kart-release/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/8a6b6e62c49f2a0fcfbc6fc1308d68aa/transformed/kart-release/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
