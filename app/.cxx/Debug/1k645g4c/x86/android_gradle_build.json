@@ -1,19 +1,19 @@
 {
   "buildFiles": [
-    "C:\\Users\\puipp\\Downloads\\Kart\\Kart\\app\\src\\main\\cpp\\CMakeLists.txt"
+    "C:\\Users\\puipp\\StudioProjects\\Kart\\app\\src\\main\\cpp\\CMakeLists.txt"
   ],
   "cleanCommandsComponents": [
     [
       "C:\\Users\\puipp\\AppData\\Local\\Android\\Sdk\\cmake\\3.22.1\\bin\\ninja.exe",
       "-C",
-      "C:\\Users\\puipp\\Downloads\\Kart\\Kart\\app\\.cxx\\Debug\\1k645g4c\\x86",
+      "C:\\Users\\puipp\\StudioProjects\\Kart\\app\\.cxx\\Debug\\1k645g4c\\x86",
       "clean"
     ]
   ],
   "buildTargetsCommandComponents": [
     "C:\\Users\\puipp\\AppData\\Local\\Android\\Sdk\\cmake\\3.22.1\\bin\\ninja.exe",
     "-C",
-    "C:\\Users\\puipp\\Downloads\\Kart\\Kart\\app\\.cxx\\Debug\\1k645g4c\\x86",
+    "C:\\Users\\puipp\\StudioProjects\\Kart\\app\\.cxx\\Debug\\1k645g4c\\x86",
     "{LIST_OF_TARGETS_TO_BUILD}"
   ],
   "libraries": {
@@ -21,7 +21,7 @@
       "toolchain": "toolchain",
       "abi": "x86",
       "artifactName": "kart",
-      "output": "C:\\Users\\puipp\\Downloads\\Kart\\Kart\\app\\build\\intermediates\\cxx\\Debug\\1k645g4c\\obj\\x86\\libkart.so",
+      "output": "C:\\Users\\puipp\\StudioProjects\\Kart\\app\\build\\intermediates\\cxx\\Debug\\1k645g4c\\obj\\x86\\libkart.so",
       "runtimeFiles": []
     }
   },

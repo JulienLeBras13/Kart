@@ -10,79 +10,23 @@
         android:id="@+id/button7"
         android:layout_width="193dp"
         android:layout_height="91dp"
-        android:layout_marginStart="195dp"
-        android:layout_marginTop="248dp"
+        android:layout_marginTop="260dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="53dp"
         android:onClick="goRight_onClick"
         android:text="droite"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.933"
-        app:layout_constraintStart_toStartOf="@+id/button6"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button6"
         android:layout_width="193dp"
         android:layout_height="91dp"
-        android:layout_marginTop="240dp"
-        android:layout_marginBottom="53dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="260dp"
         android:onClick="goLeft_onClick"
         android:text="Gauche"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.091"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="153dp"
-        android:text="Page debug"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="40dp"
-        android:onClick="Acc_onClick"
-        android:text="accélérer"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.142"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="90dp"
-        android:onClick="freiner_onClick"
-        android:text="freiner"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.142"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="140dp"
-        android:onClick="reculer_onClick"
-        android:text="Reculer"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.142"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <ProgressBar
         android:id="@+id/pb_batterie"
@@ -91,60 +35,136 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
+        android:max="100"
         android:progress="0"
         android:progressTint="@android:color/holo_green_dark"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="90dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="8dp"
-        android:onClick="getBatterie"
-        android:text="battery test"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pb_batterie" />
-
     <TextView
         android:id="@+id/tv_battery"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="31dp"
-        android:layout_marginEnd="24dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toStartOf="@+id/button5"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="20%"
+        app:layout_constraintEnd_toStartOf="@+id/pb_batterie"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <SeekBar
         android:id="@+id/seekBar_vitesse"
         android:layout_width="373dp"
         android:layout_height="83dp"
-        android:layout_marginTop="164dp"
         android:layout_marginEnd="10dp"
+        android:layout_marginBottom="20dp"
         android:max="30"
         android:progress="15"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/button7"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-    <ProgressBar
-        android:id="@+id/seekBar_position"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="412dp"
-        android:layout_height="35dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginBottom="40dp"
+    <SeekBar
+        android:id="@+id/sb_position"
+        android:layout_width="320dp"
+        android:layout_height="20dp"
+        android:layout_marginBottom="50dp"
+        android:max="200"
+        android:progress="100"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/button7"
         app:layout_constraintStart_toEndOf="@+id/button6" />
 
-    <SeekBar
-        android:id="@+id/seekBar4"
-        android:layout_width="395dp"
-        android:layout_height="29dp"
-        tools:layout_editor_absoluteX="269dp"
-        tools:layout_editor_absoluteY="281dp" />
+    <TextView
+        android:id="@+id/tv_position"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="28dp"
+        android:text="Position : 0"
+        app:layout_constraintBottom_toTopOf="@+id/sb_position"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.499"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_vitesse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="160dp"
+        android:text="0"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/seekBar_vitesse"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="160dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:onClick="reculer_onClick"
+            android:text="Reculer" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:onClick="Acc_onClick"
+            android:text="accélérer" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:onClick="freiner_onClick"
+            android:text="freiner" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_pos0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="30dp"
+        android:onClick="goPos0"
+        android:text="Position 0"
+        app:layout_constraintBottom_toTopOf="@+id/sb_position"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_distance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="217dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginEnd="336dp"
+        android:layout_marginBottom="111dp"
+        android:text="0"
+        app:layout_constraintBottom_toTopOf="@+id/seekBar_vitesse"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/linearLayout"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_hall_cunt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="201dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="302dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/linearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/tv_distance" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/puipp/Downloads/Kart/Kart/app/src/main/cpp
+# Install script for directory: C:/Users/puipp/StudioProjects/Kart/app/src/main/cpp
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/puipp/Downloads/Kart/Kart/app/.cxx/Debug/1k645g4c/x86/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/puipp/StudioProjects/Kart/app/.cxx/Debug/1k645g4c/x86/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

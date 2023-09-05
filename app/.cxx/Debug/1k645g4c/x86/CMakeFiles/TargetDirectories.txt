@@ -1,3 +1,3 @@
-C:/Users/puipp/Downloads/Kart/Kart/app/.cxx/Debug/1k645g4c/x86/CMakeFiles/kart.dir
-C:/Users/puipp/Downloads/Kart/Kart/app/.cxx/Debug/1k645g4c/x86/CMakeFiles/edit_cache.dir
-C:/Users/puipp/Downloads/Kart/Kart/app/.cxx/Debug/1k645g4c/x86/CMakeFiles/rebuild_cache.dir
+C:/Users/puipp/StudioProjects/Kart/app/.cxx/Debug/1k645g4c/x86/CMakeFiles/kart.dir
+C:/Users/puipp/StudioProjects/Kart/app/.cxx/Debug/1k645g4c/x86/CMakeFiles/edit_cache.dir
+C:/Users/puipp/StudioProjects/Kart/app/.cxx/Debug/1k645g4c/x86/CMakeFiles/rebuild_cache.dir
