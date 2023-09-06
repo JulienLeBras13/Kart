@@ -1,0 +1,3 @@
+C:/Users/puipp/StudioProjects/Kart/app/.cxx/Debug/1k645g4c/x86_64/CMakeFiles/kart.dir
+C:/Users/puipp/StudioProjects/Kart/app/.cxx/Debug/1k645g4c/x86_64/CMakeFiles/edit_cache.dir
+C:/Users/puipp/StudioProjects/Kart/app/.cxx/Debug/1k645g4c/x86_64/CMakeFiles/rebuild_cache.dir
