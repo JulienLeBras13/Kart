@@ -14,6 +14,7 @@
         android:layout_marginEnd="8dp"
         android:onClick="goRight_onClick"
         android:text="droite"
+        android:background="@drawable/bouton_style_1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -25,6 +26,7 @@
         android:layout_marginTop="260dp"
         android:onClick="goLeft_onClick"
         android:text="Gauche"
+        android:background="@drawable/bouton_style_1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -53,18 +55,18 @@
 
     <SeekBar
         android:id="@+id/seekBar_vitesse"
-        android:layout_width="373dp"
+        android:layout_width="380dp"
         android:layout_height="83dp"
         android:layout_marginEnd="10dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="80dp"
         android:max="30"
         android:progress="15"
-        app:layout_constraintBottom_toTopOf="@+id/button7"
+        app:layout_constraintBottom_toTopOf="@+id/sb_position"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <SeekBar
         android:id="@+id/sb_position"
-        android:layout_width="320dp"
+        android:layout_width="420dp"
         android:layout_height="20dp"
         android:layout_marginBottom="50dp"
         android:max="200"
@@ -99,7 +101,7 @@
         android:id="@+id/linearLayout"
         android:layout_width="160dp"
         android:layout_height="0dp"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="8dp"
         android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -125,14 +127,14 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="5dp"
-            android:onClick="freiner_onClick"
-            android:text="freiner" />
+            android:onClick="ralentir_onClick"
+            android:text="ralentir" />
 
     </LinearLayout>
 
     <Button
         android:id="@+id/btn_pos0"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginBottom="30dp"
@@ -145,26 +147,62 @@
         android:id="@+id/tv_distance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="217dp"
-        android:layout_marginTop="27dp"
-        android:layout_marginEnd="336dp"
-        android:layout_marginBottom="111dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="48dp"
         android:text="0"
-        app:layout_constraintBottom_toTopOf="@+id/seekBar_vitesse"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/switch_phares" />
+
+    <Button
+        android:id="@+id/button8"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="30dp"
+        android:onClick="freiner_onClick"
+        android:text="freiner"
+        app:layout_constraintBottom_toTopOf="@+id/sb_position"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/button9"
+        android:layout_width="131dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="5dp"
+        android:onClick="onClick_setCenter"
+        android:text="set_center"
         app:layout_constraintStart_toEndOf="@+id/linearLayout"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tv_hall_cunt"
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="201dp"
-        android:layout_marginTop="21dp"
-        android:layout_marginEnd="302dp"
-        android:text="TextView"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="2dp"
+        android:text="km/h"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_vitesse"
+        app:layout_constraintStart_toEndOf="@+id/tv_vitesse" />
+
+    <Switch
+        android:id="@+id/switch_phares"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="8dp"
+        android:text="Phares"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/linearLayout"
-        app:layout_constraintTop_toBottomOf="@+id/tv_distance" />
+        app:layout_constraintTop_toBottomOf="@+id/pb_batterie" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="18dp"
+        android:text="cm"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/switch_phares" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
