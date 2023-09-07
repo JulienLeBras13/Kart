@@ -39,11 +39,17 @@ public class MyKartRemote extends AbstractKartControlActivity {
     SeekBar sb_position;
     ProgressBar pb_batterie;
     Switch switch_phares;
+    Switch switch_ultrason;
     Runnable runnable;
 
     int counter;
     Handler handler;
     private View view;
+    public boolean active_ultrason;
+    int i;
+    long currentTimestamp;
+    long timeDifference;
+    int cnt_diff;
 
 
     @Override
@@ -56,6 +62,7 @@ public class MyKartRemote extends AbstractKartControlActivity {
         pb_batterie = findViewById(R.id.pb_batterie);
         tv_distance = findViewById(R.id.tv_distance);
         switch_phares = findViewById(R.id.switch_phares);
+        switch_ultrason = findViewById(R.id.switch_ultrason);
         handler = new Handler();
 
         kart.setup().setSteeringCenterPosition(237);
@@ -91,6 +98,18 @@ public class MyKartRemote extends AbstractKartControlActivity {
                 }
             }
         });
+        switch_ultrason.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    active_ultrason = true;
+
+                } else {
+                    active_ultrason = false;
+
+                }
+            }
+        });
 
         kart.addKartListener(new KartListener() {
 
@@ -109,7 +128,7 @@ public class MyKartRemote extends AbstractKartControlActivity {
             public void ultrasonicRangerDistanceChanged(@NonNull Kart kart, double distance){
                 KartListener.super.ultrasonicRangerDistanceChanged(kart, distance);
                 tv_distance.setText(String.format("%.1f",distance*100));
-                if(distance*100 >= 50){
+                if(((distance * 100) >= 60) && active_ultrason){
                     kart.setDriveSpeed(0);
                     seekBar_vitesse.setProgress(15);
                 }
@@ -117,33 +136,44 @@ public class MyKartRemote extends AbstractKartControlActivity {
             }
         });
         kart.addKartListener(new KartListener() {
-            private float memory_count = 0.0F; // Variable pour enregistrer le comptage précédent
+            private int memory_count; // Variable pour enregistrer le comptage précédent
             private long previousTimestamp = System.currentTimeMillis(); // Enregistrer le moment où l'événement précédent s'est produit
-            @SuppressLint("DefaultLocale")
+            @SuppressLint({"DefaultLocale", "SuspiciousIndentation"})
             @Override
             public void hallSensorCountChanged(@NonNull Kart kart, int index, int value) {
                 KartListener.super.hallSensorCountChanged(kart, index, value);
-                Log.d("TAG_10", String.valueOf(value));
+
                 // Obtenez le temps actuel
-                long currentTimestamp = System.currentTimeMillis();
-
-                // Calculer la différence de temps en millisecondes entre les événements de comptage
-                long timeDifference = currentTimestamp - previousTimestamp;
-
-                memory_count ++;
-
-                if (timeDifference >= 200 && sb_position.getProgress() != 0) {
+                currentTimestamp = System.currentTimeMillis();
+                i++;
+                cnt_diff = value - memory_count;
+                Log.d("TAG_10", String.valueOf(value)+ "  " + String.valueOf(i));
+                if (i == 1){
                     // Mettre à jour la variable de temps précédent pour la prochaine itération
                     previousTimestamp = currentTimestamp;
-                    // Calculez la vitesse en utilisant la différence de temps
-                    Log.d("TAG_11" , String.valueOf(timeDifference));
-                    double vitesse_kart = (3.14159 *0.0007) / (timeDifference/(memory_count*2) / 3600000.0);
-                    Log.d("TAG_12" , String.valueOf(timeDifference));
 
-                    // Mettez à jour l'affichage de la vitesse
-                    tv_vitesse.setText(String.format("%.1f", vitesse_kart));
-                    memory_count = 0.0F;
                 }
+
+                if (i == 4) {
+                    //if (timeDifference >= 2000 && sb_position.getProgress() != 0) {
+                    // Calculer la différence de temps en millisecondes entre les événements de comptage
+                    timeDifference = currentTimestamp - previousTimestamp;
+                        // Calculez la vitesse en utilisant la différence de temps
+                        Log.d("TAG_11", String.valueOf(timeDifference));
+                        Log.d("TAG_12", String.valueOf(cnt_diff));
+                        Log.d("TAG_13", String.valueOf(memory_count));
+                        float vitesse_kart = (float) ((3.14159 * 0.00007) / ((timeDifference) / 3600000.0));
+                        Log.d("TAG_14", String.valueOf(vitesse_kart));
+
+                        // Mettez à jour l'affichage de la vitesse
+                        tv_vitesse.setText(String.format("%.1f", vitesse_kart));
+                        memory_count = value;
+                    i=0;
+
+                  //  }
+
+                }
+
             }
         });
 
@@ -156,6 +186,9 @@ public class MyKartRemote extends AbstractKartControlActivity {
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 // lorsque la valeur de la SeekBar change
                 kart.setDriveSpeed(seekBar_vitesse.getProgress()-15);
+                if (seekBar_vitesse.getProgress() == 0){
+                    tv_vitesse.setText("0");
+                }
                 if(seekBar_vitesse.getProgress() < 15){
                     kart.setLedState(3, true); // phares reculer
                 }else{
